@@ -1,0 +1,7 @@
+Strona g³ówna(logowania/rejestracji)
+
+Logowanie(user/password) -> [powodzenie]Logowanie do systemu i strona g³ówna panelu
+[niepowodzenie] Komunikat o b³êdzie i powrót do Logowanie
+
+Rejestracja -> Strona rejestracji nowego urzytkownika [user/has³o/email] (Walidacja) ->Komunikat o poprawnej rejestracji->
+(Potwierdzenie na maila)->Przejœcie do panelu g³ównego
