@@ -5,3 +5,5 @@ Logowanie(user/password) -> [powodzenie]Logowanie do systemu i strona g³ówna pan
 
 Rejestracja -> Strona rejestracji nowego urzytkownika [user/has³o/email] (Walidacja) ->Komunikat o poprawnej rejestracji->
 (Potwierdzenie na maila)->Przejœcie do panelu g³ównego
+
+Panel g³ówny - kilka opcji do wyboru[Podgl¹d pracy/przejœcie do edytora/Kalendarz pracy/Przydatne linki/pomoc/kontakt] 
