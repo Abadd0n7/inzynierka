@@ -9,6 +9,7 @@ namespace Inzynierka.Controllers
     public class CalendarController : Controller
     {
         // GET: Calendar
+        [Authorize]
         public ActionResult Index()
         {
             return View();
