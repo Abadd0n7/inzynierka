@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -20,14 +22,17 @@
                 @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.AppName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-	                <li>@Html.ActionLink(@Inzynierka.Resources.Strings.Resource.WorksHeader, "Index" , "Works")</li>
-	                <li>@Html.ActionLink(@Inzynierka.Resources.Strings.Resource.EditorHeader, "Index", "Editor")</li>
-	                <li>@Html.ActionLink(@Inzynierka.Resources.Strings.Resource.CalendarHeader, "Index", "Calendar")</li>
-					<li>@Html.ActionLink(@Inzynierka.Resources.Strings.Resource.HelpHeader, "Help" , "Home")</li>
-	                <li>@Html.ActionLink( @Inzynierka.Resources.Strings.Resource.ContactHeader, "Contact", "Home")</li>
-					<li>@Html.ActionLink( @Inzynierka.Resources.Strings.Resource.AboutHeader, "About", "Home" )</li>
-                </ul>
+	            <ul class="nav navbar-nav">
+		            @if ( Request.IsAuthenticated )
+					{
+						<li>@Html.ActionLink( @Inzynierka.Resources.Strings.Resource.WorksHeader, "Index", "Works" )</li>
+						<li>@Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditorHeader, "Index", "Editor" )</li>
+						<li>@Html.ActionLink( @Inzynierka.Resources.Strings.Resource.CalendarHeader, "Index", "Calendar" )</li>
+						<li>@Html.ActionLink( @Inzynierka.Resources.Strings.Resource.HelpHeader, "Help", "Home" )</li>
+					}
+		            <li>@Html.ActionLink(@Inzynierka.Resources.Strings.Resource.ContactHeader, "Contact", "Home")</li>
+		            <li>@Html.ActionLink(@Inzynierka.Resources.Strings.Resource.AboutHeader, "About", "Home")</li>
+	            </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

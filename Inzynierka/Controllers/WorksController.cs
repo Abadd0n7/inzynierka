@@ -9,6 +9,7 @@ namespace Inzynierka.Controllers
     public class WorksController : Controller
     {
         // GET: Works
+		[Authorize]
         public ActionResult Index()
         {
             return View();
