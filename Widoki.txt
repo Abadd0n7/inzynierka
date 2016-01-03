@@ -18,6 +18,6 @@ Pomoc/Kontakt/O aplikacji
 
 /// Edytor - w stylu forum. Generowanie odnoœnika do innej pracy.
 
-/// Kalendarz pracy - ala trello
+/// Kalendarz pracy - a la trello, pogrupowanie
 
-///kontakt/o aplikacji  -  uzupe³niæ dane
+/// kontakt/o aplikacji  -  uzupe³niæ dane
