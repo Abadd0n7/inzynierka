@@ -10,5 +10,14 @@ Panel g³ówny - kilka opcji do wyboru[Podgl¹d pracy/przejœcie do edytora/Kalendar
 Podgl¹d swoich prac/pracy
 Edytor tekstu
 Kalendarz pracy
-Przydatne linki
 Pomoc/Kontakt/O aplikacji
+
+
+
+/// Podgl¹d prac nie tylko swoich.
+
+/// Edytor - w stylu forum. Generowanie odnoœnika do innej pracy.
+
+/// Kalendarz pracy - ala trello
+
+///kontakt/o aplikacji  -  uzupe³niæ dane
