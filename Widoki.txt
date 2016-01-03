@@ -7,3 +7,8 @@ Rejestracja -> Strona rejestracji nowego urzytkownika [user/has³o/email] (Walida
 (Potwierdzenie na maila)->Przejœcie do panelu g³ównego
 
 Panel g³ówny - kilka opcji do wyboru[Podgl¹d pracy/przejœcie do edytora/Kalendarz pracy/Przydatne linki/pomoc/kontakt] 
+Podgl¹d swoich prac/pracy
+Edytor tekstu
+Kalendarz pracy
+Przydatne linki
+Pomoc/Kontakt/O aplikacji
