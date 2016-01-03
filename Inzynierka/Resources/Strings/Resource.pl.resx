@@ -98,6 +98,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SampleKey" xml:space="preserve">
-    <value>Przyklad</value>
+    <value>Przykład</value>
+  </data>
+  <data name="EditorHeader" xml:space="preserve">
+    <value>Edytor</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Nazwa aplikacji</value>
+  </data>
+  <data name="HomeHeader" xml:space="preserve">
+    <value>Strona domowa</value>
+  </data>
+  <data name="WorksHeader" xml:space="preserve">
+    <value>Twoje prace</value>
+  </data>
+  <data name="CalendarHeader" xml:space="preserve">
+    <value>Kalendarz prac</value>
+  </data>
+  <data name="HelpHeader" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="AboutHeader" xml:space="preserve">
+    <value>O aplikacji</value>
+  </data>
+  <data name="ContactHeader" xml:space="preserve">
+    <value>Kontakt</value>
   </data>
 </root>

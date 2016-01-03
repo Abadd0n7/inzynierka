@@ -61,11 +61,83 @@ namespace Inzynierka.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string AboutHeader {
+            get {
+                return ResourceManager.GetString("AboutHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application&apos;s name.
+        /// </summary>
+        public static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Planner.
+        /// </summary>
+        public static string CalendarHeader {
+            get {
+                return ResourceManager.GetString("CalendarHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string ContactHeader {
+            get {
+                return ResourceManager.GetString("ContactHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editor.
+        /// </summary>
+        public static string EditorHeader {
+            get {
+                return ResourceManager.GetString("EditorHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string HelpHeader {
+            get {
+                return ResourceManager.GetString("HelpHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string HomeHeader {
+            get {
+                return ResourceManager.GetString("HomeHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sample.
         /// </summary>
         public static string SampleKey {
             get {
                 return ResourceManager.GetString("SampleKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your works.
+        /// </summary>
+        public static string WorksHeader {
+            get {
+                return ResourceManager.GetString("WorksHeader", resourceCulture);
             }
         }
     }

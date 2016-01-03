@@ -100,4 +100,28 @@
   <data name="SampleKey" xml:space="preserve">
     <value>Sample</value>
   </data>
+  <data name="EditorHeader" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Application's name</value>
+  </data>
+  <data name="HomeHeader" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="WorksHeader" xml:space="preserve">
+    <value>Your works</value>
+  </data>
+  <data name="CalendarHeader" xml:space="preserve">
+    <value>Planner</value>
+  </data>
+  <data name="HelpHeader" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="AboutHeader" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ContactHeader" xml:space="preserve">
+    <value>Contact</value>
+  </data>
 </root>
