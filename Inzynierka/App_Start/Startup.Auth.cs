@@ -54,15 +54,15 @@ namespace Inzynierka
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "169454293410731",
+               appSecret: "c265877a96deec49468fc583cfae12fe");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "93833736267-2rgi9ln2in62lpurjbdvvfn65d9qpv3l.apps.googleusercontent.com",
+                ClientSecret = "WMHZpOKrUPbCjVo-eGHAA1Tx"
+            });
         }
     }
 }
