@@ -12,8 +12,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Inzynierka.Models;
 using SendGrid;
-using System.Net.Mail;
 using System.Net;
+using System.Configuration;
+using System.Diagnostics;
 
 namespace Inzynierka
 {
@@ -21,39 +22,16 @@ namespace Inzynierka
     {
         public async Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
             await configSendGridasync(message);
-            //return Task.FromResult(0);
         }
 
+        // Use NuGet to install SendGrid (Basic C# client lib) 
         private async Task configSendGridasync(IdentityMessage message)
         {
-            // Create the email object first, then add the properties.
             var myMessage = new SendGridMessage();
-
-            // Add the message properties.
-            myMessage.From = new MailAddress("john@example.com");
-
-            // Add multiple addresses to the To field.
-            List<String> recipients = new List<String>
-            {
-                @"Jeff Smith <jeff@example.com>",
-                @"Anna Lidman <anna@example.com>",
-                @"Peter Saddow <peter@example.com>"
-            };
-
-            myMessage.AddTo(recipients);
-
-            myMessage.Subject = "Testing the SendGrid Library";
-
-            //Add the HTML and Text bodies
-            myMessage.Html = "<p>Hello World!</p>";
-            myMessage.Text = "Hello World plain text!";
-
-            /*var myMessage = new SendGridMessage();
             myMessage.AddTo(message.Destination);
             myMessage.From = new System.Net.Mail.MailAddress(
-                                "lpytlak27@gmail.com", "Luke");
+                                "Joe@contoso.com", "Joe S.");
             myMessage.Subject = message.Subject;
             myMessage.Text = message.Body;
             myMessage.Html = message.Body;
@@ -65,19 +43,26 @@ namespace Inzynierka
 
             // Create a Web transport for sending email.
             var transportWeb = new Web(credentials);
-            
-            // Send the email.
-            if (transportWeb != null)
+
+            //try
+            //{
+                // Send the email.
+                if (transportWeb != null)
+                {
+                    await transportWeb.DeliverAsync(myMessage);
+                }
+                else
+                {
+                    Trace.TraceError("Failed to create Web transport.");
+                    await Task.FromResult(0);
+                }
+            /*}
+            catch (Exception ex)
             {
-                await transportWeb.DeliverAsync(myMessage);
-            }
-            else
-            {
-                Trace.TraceError("Failed to create Web transport.");
-                await Task.FromResult(0);
-            }
-        */}
+                Trace.TraceError(ex.Message + " SendGrid probably not configured correctly.");
+            }*/
         }
+    }
 
     public class SmsService : IIdentityMessageService
     {
