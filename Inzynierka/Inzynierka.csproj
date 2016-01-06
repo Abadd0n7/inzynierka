@@ -206,10 +206,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601041628095_InitialMigration.cs" />
+    <Compile Include="Migrations\201601041628095_InitialMigration.Designer.cs">
+      <DependentUpon>201601041628095_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601041941576_secondMigration.cs" />
+    <Compile Include="Migrations\201601041941576_secondMigration.Designer.cs">
+      <DependentUpon>201601041941576_secondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ActivityPlan.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\SampleTable.cs" />
     <Compile Include="Models\ScientificWorkContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Strings\Resource.Designer.cs">
@@ -223,6 +232,7 @@
       <DependentUpon>Resource.pl.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\Calendar\CalendarItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database.mdf" />
@@ -292,10 +302,20 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Editor\Index.cshtml" />
     <Content Include="Views\Works\Index.cshtml" />
-    <Content Include="Views\Calendar\Index.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\Calendar\Index.cshtml" />
+    <Content Include="Views\Calendar\Details.cshtml" />
+    <Content Include="Views\Calendar\Create.cshtml" />
+    <Content Include="Views\Calendar\Edit.cshtml" />
+    <Content Include="Views\Calendar\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601041628095_InitialMigration.resx">
+      <DependentUpon>201601041628095_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601041941576_secondMigration.resx">
+      <DependentUpon>201601041941576_secondMigration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Strings\Resource.pl.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.pl.Designer.cs</LastGenOutput>
