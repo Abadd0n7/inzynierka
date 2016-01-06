@@ -332,6 +332,7 @@
     <Content Include="Views\Calendar\Delete.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Calendar\ActivityError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

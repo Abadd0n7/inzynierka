@@ -124,4 +124,37 @@
   <data name="ContactHeader" xml:space="preserve">
     <value>Kontakt</value>
   </data>
+  <data name="TodayLabel" xml:space="preserve">
+    <value>Dziś</value>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="ActivityType" xml:space="preserve">
+    <value>Typ aktywności</value>
+  </data>
+  <data name="ReviewText" xml:space="preserve">
+    <value>Recenzja</value>
+  </data>
+  <data name="StartWritingText" xml:space="preserve">
+    <value>Rozpoczęcie pracy</value>
+  </data>
+  <data name="DeadlineText" xml:space="preserve">
+    <value>Deadline</value>
+  </data>
+  <data name="PublicationText" xml:space="preserve">
+    <value>Publikacja</value>
+  </data>
+  <data name="RelatedWorkText" xml:space="preserve">
+    <value>Powiązane praca</value>
+  </data>
+  <data name="DetailsHeader" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="BackText" xml:space="preserve">
+    <value>Powrót</value>
+  </data>
 </root>

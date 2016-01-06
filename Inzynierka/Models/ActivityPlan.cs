@@ -8,6 +8,14 @@ using System.Web;
 
 namespace Inzynierka.Models
 {
+    public enum ActivityType
+    {
+        Publication=1,
+        Deadline=2,
+        Reaview=3,
+        Start=4
+    }
+
     [Table( "ActivityPlan" )]
     public class ActivityPlan
     {
@@ -35,5 +43,15 @@ namespace Inzynierka.Models
             get; 
             set; 
         }
+
+        public string Description
+        {
+            get; 
+            set;
+        }
+
+        public ActivityType Type { get; set; }
+
+        public long WorkId { get; set; }
     }
 }
