@@ -65,6 +65,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = ViewBag.Context.Id.ToString() }) |
+    @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new { id = ViewBag.Context.Id.ToString() }) |
     @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.BackText, "Index")
 </p>

@@ -157,4 +157,13 @@
   <data name="BackText" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="EditHeader" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="CreateHeader" xml:space="preserve">
+    <value>Create new</value>
+  </data>
+  <data name="SaveText" xml:space="preserve">
+    <value>Save</value>
+  </data>
 </root>

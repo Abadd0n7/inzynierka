@@ -254,7 +254,9 @@
       <DependentUpon>Resource.pl.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\Calendar\CalendarEntryEditViewModel.cs" />
     <Compile Include="ViewModel\Calendar\CalendarItem.cs" />
+    <Compile Include="ViewModel\Calendar\CalendarListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database.mdf" />
