@@ -168,7 +168,7 @@ namespace Inzynierka.Controllers
                 if (result.Succeeded)
                 {
                     //Zakomentowane by zablokować możliwość logowania dopóki użytkownik nie potwierdzi maila.
-                    //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account");
                     /*
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
