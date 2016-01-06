@@ -117,64 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="SampleKey" xml:space="preserve">
-    <value>Przykład</value>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAM1YzW7jNhC+F+g7CDq1QNaMnUXRBvIuUicujK6TIMpuz7Q0dohQlEpSrt1X66GP1FfoUNS/5L8kWxS+yMOZb4bzL/3z19/ex03EnTVIxWIxdoeDc9cBEcQhE6uxm+rlux/djx++/ca7CaON86XguzB8KCnU2H3SOrkkRAVPEFE1iFggYxUv9SCII0LDmIzOz38iwyEBhHARy3G8h1RoFkH2B/9OYhFAolPK53EIXOV0PPEzVOeWRqASGsDYnYk/t4KBfKYDy+w6V5xRNMQHvnQdKkSsqUYzLz8r8LWMxcpPkED54zYB5FtSriA3/7JiP/Ym5yNzE1IJFlBBqnQcnQg4vMhdQ9riL3KwW7oOnXeDTtZbc+vMgWP3KtBsjaR7ThG+rfBywqVh7vHxoC555lTnZ2VOYOqY35kzSblOJYwFpFpSfubcpwvOgl9h+xg/gxiLlPO6mWgonjUISLqXcQJSbx9gmRs/C12HNOVIW7AUq8kUV9IXI9e5ReV0waHMgtr1fR1L+AUESKohvKdagxQGAzI/drS3dBUuMv8KrZh+WEiuM6ebTyBW+mns4qPrTNkGwoKSW/JZMKw7FNIyhUPKMLVldbmvpuYaPVEoMc+PLDosAyqQLLEp/JXtM/ClEiz/Mk/tQSfa+9F+i+VzI2N+eH8AwyNVjTUrL4166s5aNVNTTldVI3pJHZrzt6hDdHcIkm8xPPU6abppDtECZH4Xi5J3qC+Up0gbdjzbELkGGnImoOQf7ed/ALpm8EfJfrGf3ddU6pL5fTdCNhbdzohjR1O0qwQKmCn1JQtMJphT2Oie+GDx5SFSeZo2rbPoPuietovjqkqZVtLattyXX6Wl1WQkdjQWI5TsmKHenCYJRrc2U3OK49uBOnnnnz5qIotBAtUzcUprS03YWekKWqeoGi2dMqk09ha6oKYYJmHUYeuPyw6fFzr7XN8eMlUkCinznI+OvTOwDVW5dYo3jdDc7NJQmtUavh3xbNehnMqeCTaJeRqJXVNwn3RzJtVxLOV4pGLg1DEK2vEodp7UMSzlBIT6dGkA1Q+Ox7MtuQ5kKccjFFOjjlHQuigeaeVJOydJJylbO0870/e1izZLqb1sG6324OWlengP79SuZXEddM+ahVndbpWGaGAYBv7vfMJNGVcMcyrYEpS248jFXXjU2uX/P3s1USrkJyzX//l+y4xnD26wJy5E9VVWrKkMnqj8LqKb7+tIp6+rr4Kqr6QhPutsJT0Ro7uivsqm+hqaBeJVi+eCrQ6D7N48+zab7qA9fmM5uLDYwsdoLGK8grX4TVaabi/ySP3LgYdxZKsKwnxHEBCYsFagBc9MLOPC7XjRukUFSysqc9AUM4xeSdw9aKDxOAClsjeZfNm8wTU0nIm7VCepvlIK11LeeFH0yH792d7WtNm7yxJTvcUV0ExmiuRO/JwyHpZ2T3sSageESZ28paBV+CaHcKttiXQbiyOBcvddQwLCNKRHiBKOYOpO+HQNL7EN28onWNFgW4yU3SCHA9F0u3fN6ErSSOUYlbz5GkbM57AP/wIoeZSnQBMAAA==</value>
   </data>
-  <data name="EditorHeader" xml:space="preserve">
-    <value>Edytor</value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value>RedApp</value>
-  </data>
-  <data name="HomeHeader" xml:space="preserve">
-    <value>Strona domowa</value>
-  </data>
-  <data name="WorksHeader" xml:space="preserve">
-    <value>Twoje prace</value>
-  </data>
-  <data name="CalendarHeader" xml:space="preserve">
-    <value>Kalendarz prac</value>
-  </data>
-  <data name="HelpHeader" xml:space="preserve">
-    <value>Pomoc</value>
-  </data>
-  <data name="AboutHeader" xml:space="preserve">
-    <value>O aplikacji</value>
-  </data>
-  <data name="ContactHeader" xml:space="preserve">
-    <value>Kontakt</value>
-  </data>
-  <data name="TodayLabel" xml:space="preserve">
-    <value>Dziś</value>
-  </data>
-  <data name="DescriptionLabel" xml:space="preserve">
-    <value>Opis</value>
-  </data>
-  <data name="DateLabel" xml:space="preserve">
-    <value>Data</value>
-  </data>
-  <data name="ActivityType" xml:space="preserve">
-    <value>Typ aktywności</value>
-  </data>
-  <data name="ReviewText" xml:space="preserve">
-    <value>Recenzja</value>
-  </data>
-  <data name="StartWritingText" xml:space="preserve">
-    <value>Rozpoczęcie pracy</value>
-  </data>
-  <data name="DeadlineText" xml:space="preserve">
-    <value>Deadline</value>
-  </data>
-  <data name="PublicationText" xml:space="preserve">
-    <value>Publikacja</value>
-  </data>
-  <data name="RelatedWorkText" xml:space="preserve">
-    <value>Powiązane praca</value>
-  </data>
-  <data name="DetailsHeader" xml:space="preserve">
-    <value>Szczegóły</value>
-  </data>
-  <data name="BackText" xml:space="preserve">
-    <value>Powrót</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

@@ -70,11 +70,29 @@ namespace Inzynierka.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activity type.
+        /// </summary>
+        public static string ActivityType {
+            get {
+                return ResourceManager.GetString("ActivityType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Application&apos;s name.
         /// </summary>
         public static string AppName {
             get {
                 return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string BackText {
+            get {
+                return ResourceManager.GetString("BackText", resourceCulture);
             }
         }
         
@@ -93,6 +111,42 @@ namespace Inzynierka.Resources.Strings {
         public static string ContactHeader {
             get {
                 return ResourceManager.GetString("ContactHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string DateLabel {
+            get {
+                return ResourceManager.GetString("DateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deadline.
+        /// </summary>
+        public static string DeadlineText {
+            get {
+                return ResourceManager.GetString("DeadlineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string DescriptionLabel {
+            get {
+                return ResourceManager.GetString("DescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string DetailsHeader {
+            get {
+                return ResourceManager.GetString("DetailsHeader", resourceCulture);
             }
         }
         
@@ -124,11 +178,56 @@ namespace Inzynierka.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Publication.
+        /// </summary>
+        public static string PublicationText {
+            get {
+                return ResourceManager.GetString("PublicationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Related writing.
+        /// </summary>
+        public static string RelatedWorkText {
+            get {
+                return ResourceManager.GetString("RelatedWorkText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review.
+        /// </summary>
+        public static string ReviewText {
+            get {
+                return ResourceManager.GetString("ReviewText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sample.
         /// </summary>
         public static string SampleKey {
             get {
                 return ResourceManager.GetString("SampleKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start writing.
+        /// </summary>
+        public static string StartWritingText {
+            get {
+                return ResourceManager.GetString("StartWritingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        public static string TodayLabel {
+            get {
+                return ResourceManager.GetString("TodayLabel", resourceCulture);
             }
         }
         

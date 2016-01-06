@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+header {
+    font-family: "Segoe";
+    font-size: 24px;
+    color: limegreen;
+}

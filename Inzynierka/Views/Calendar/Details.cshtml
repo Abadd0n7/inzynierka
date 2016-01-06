@@ -1,0 +1,70 @@
+﻿@using Inzynierka.Models
+
+@{
+    ViewBag.Title = @ViewBag.Context.ActivityName + " - " + @Inzynierka.Resources.Strings.Resource.DetailsHeader;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: limegreen">@ViewBag.Context.ActivityName</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Inzynierka.Resources.Strings.Resource.DateLabel
+        </dt>
+
+        <dd>
+            @ViewBag.Context.Date.ToString("dd MMMM yyyy, dddd")
+        </dd>
+
+        <dt>
+            @Inzynierka.Resources.Strings.Resource.DescriptionLabel
+        </dt>
+
+        <dd>
+            @ViewBag.Context.Description
+        </dd>
+
+        <dt>
+            @Inzynierka.Resources.Strings.Resource.ActivityType
+        </dt>
+
+        <dd>
+            @switch ( (int)ViewBag.Context.Type )
+            {
+                case 1:
+                    {
+                        @Inzynierka.Resources.Strings.Resource.PublicationText;
+                        break;
+                    }
+                case 2:
+                    {
+                        @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                        break;
+                    }
+                case 3: 
+                    {
+                        @Inzynierka.Resources.Strings.Resource.ReviewText;
+                        break;
+                    }
+                case 4: 
+                    {
+                         @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                        break;
+                    }    
+            }
+        </dd>
+
+        <dt>
+            @Inzynierka.Resources.Strings.Resource.RelatedWorkText
+        </dt>
+
+        <dd>
+            @ViewBag.Context.WorkId
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = ViewBag.Context.Id.ToString() }) |
+    @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.BackText, "Index")
+</p>

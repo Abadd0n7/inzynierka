@@ -12,16 +12,14 @@ namespace Inzynierka.Models
 		{
 		}
 
-		public virtual DbSet<SampleTable> SampleTables
-		{
-			get; set;
-		}
+	    public virtual DbSet<ActivityPlan> ActivityPlans
+	    {
+	        get; set;
+	    } 
 
 		protected override void OnModelCreating( DbModelBuilder modelBuilder )
 		{
-			modelBuilder.Entity<SampleTable>()
-				.Property( e => e.StrangeVal )
-				.IsFixedLength();
+			
 		}
 	}
 }
