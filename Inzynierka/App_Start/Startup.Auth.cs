@@ -50,9 +50,9 @@ namespace Inzynierka
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: "",
+               consumerSecret: "");
 
             app.UseFacebookAuthentication(
                appId: "169454293410731",
