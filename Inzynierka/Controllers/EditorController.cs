@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inzynierka.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,7 @@ namespace Inzynierka.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            return View(new Editor());
         }
     }
 }
