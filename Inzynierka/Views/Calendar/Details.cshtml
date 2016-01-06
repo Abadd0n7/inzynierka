@@ -1,11 +1,11 @@
-﻿@using Inzynierka.Models
+﻿@model Inzynierka.Models.ActivityPlan
 
 @{
-    ViewBag.Title = @ViewBag.Context.ActivityName + " - " + @Inzynierka.Resources.Strings.Resource.DetailsHeader;
+    ViewBag.Title = @Model.ActivityName + " - " + @Inzynierka.Resources.Strings.Resource.DetailsHeader;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="color: limegreen">@ViewBag.Context.ActivityName</h2>
+<h2 style="color: limegreen">@Model.ActivityName</h2>
 
 <div>
     <dl class="dl-horizontal">
@@ -14,7 +14,7 @@
         </dt>
 
         <dd>
-            @ViewBag.Context.Date.ToString("dd MMMM yyyy, dddd")
+            @Model.Date.Value.ToString("dd MMMM yyyy, dddd")
         </dd>
 
         <dt>
@@ -22,7 +22,7 @@
         </dt>
 
         <dd>
-            @ViewBag.Context.Description
+            @Model.Description
         </dd>
 
         <dt>
@@ -30,7 +30,7 @@
         </dt>
 
         <dd>
-            @switch ( (int)ViewBag.Context.Type )
+            @switch ( (int)Model.Type )
             {
                 case 1:
                     {
@@ -60,11 +60,20 @@
         </dt>
 
         <dd>
-            @ViewBag.Context.WorkId
+            @Model.WorkId
         </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new { id = ViewBag.Context.Id.ToString() }) |
-    @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.BackText, "Index")
+    @if ( @ViewBag.CanEdit )
+    {
+
+        @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new
+        {
+            id = Model.Id.ToString()
+        } );
+        @Html.Raw( "|" );
+        @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.BackText, "Index" )
+    }
+    
 </p>

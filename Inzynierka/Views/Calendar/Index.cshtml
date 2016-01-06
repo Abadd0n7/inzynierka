@@ -25,9 +25,325 @@
         <th>
             
         </th>
-    </tr>
+</tr>
 
-@if ( @Model.HasTodayEvents )
+    <!-- This week -->
+    @if ( @Model.HasFutureEvents )
+    {
+    <tr>
+        <td colspan="3">
+            <header>
+                @Inzynierka.Resources.Strings.Resource.InFutureLabel
+            </header>
+        </td>
+    </tr>
+        foreach ( var item in Model.FutureEvents )
+        {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Date
+                (
+                @switch ( @item.Type )
+                {
+                    case 1:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.PublicationText;
+                            break;
+                        }
+                    case 2:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                            break;
+                        }
+                    case 3:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.ReviewText;
+                            break;
+                        }
+                    case 4:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                            break;
+                        }
+                }
+                )
+            </td>
+            <td>
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DetailsHeader, "Details", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DeleteText, "Delete", new
+           {
+               id = item.Id
+           } )
+            </td>
+        </tr>
+
+        }
+    }
+
+<!-- This month -->
+    @if ( @Model.HasThisMonthEvents )
+    {
+    <tr>
+        <td colspan="3">
+            <header>
+                @Inzynierka.Resources.Strings.Resource.ThisMonthLabel
+            </header>
+        </td>
+    </tr>
+        foreach ( var item in Model.ThisMonthEvents )
+        {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Date
+                (
+                @switch ( @item.Type )
+                {
+                    case 1:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.PublicationText;
+                            break;
+                        }
+                    case 2:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                            break;
+                        }
+                    case 3:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.ReviewText;
+                            break;
+                        }
+                    case 4:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                            break;
+                        }
+                }
+                )
+            </td>
+            <td>
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DetailsHeader, "Details", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DeleteText, "Delete", new
+           {
+               id = item.Id
+           } )
+            </td>
+        </tr>
+
+        }
+    }
+
+<!-- Next week -->
+    @if ( @Model.HasNextWeekEvents )
+    {
+    <tr>
+        <td colspan="3">
+            <header>
+                @Inzynierka.Resources.Strings.Resource.NextWeekLabel
+            </header>
+        </td>
+    </tr>
+        foreach ( var item in Model.NextWeekEvents )
+        {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Date
+                (
+                @switch ( @item.Type )
+                {
+                    case 1:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.PublicationText;
+                            break;
+                        }
+                    case 2:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                            break;
+                        }
+                    case 3:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.ReviewText;
+                            break;
+                        }
+                    case 4:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                            break;
+                        }
+                }
+                )
+            </td>
+            <td>
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DetailsHeader, "Details", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DeleteText, "Delete", new
+           {
+               id = item.Id
+           } )
+            </td>
+        </tr>
+
+        }
+    }
+
+<!-- This week -->
+@if ( @Model.HasThisWeekEvents )
+    {
+    <tr>
+        <td colspan="3">
+            <header>
+                @Inzynierka.Resources.Strings.Resource.ThisWeekLabel
+            </header>
+        </td>
+    </tr>
+        foreach ( var item in Model.ThisWeekEvents )
+        {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Date
+                (
+                @switch ( @item.Type )
+                {
+                    case 1:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.PublicationText;
+                            break;
+                        }
+                    case 2:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                            break;
+                        }
+                    case 3:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.ReviewText;
+                            break;
+                        }
+                    case 4:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                            break;
+                        }
+                }
+                )
+            </td>
+            <td>
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DetailsHeader, "Details", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DeleteText, "Delete", new
+           {
+               id = item.Id
+           } )
+            </td>
+        </tr>
+
+        }
+    }
+
+    <!-- Tomorrow -->
+    @if ( @Model.HasTomorrowItems )
+    {
+    <tr>
+        <td colspan="3">
+            <header>
+                @Inzynierka.Resources.Strings.Resource.TomorrowLabel
+            </header>
+        </td>
+    </tr>
+        foreach ( var item in Model.TomorrowItems )
+        {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Date
+                (
+                @switch ( @item.Type )
+                {
+                    case 1:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.PublicationText;
+                            break;
+                        }
+                    case 2:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                            break;
+                        }
+                    case 3:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.ReviewText;
+                            break;
+                        }
+                    case 4:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                            break;
+                        }
+                }
+                )
+            </td>
+            <td>
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DetailsHeader, "Details", new
+           {
+               id = item.Id
+           } ) |
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DeleteText, "Delete", new
+           {
+               id = item.Id
+           } )
+            </td>
+        </tr>
+
+        }
+    }
+
+    <!-- Today -->
+    @if ( @Model.HasTodayEvents )
 {
     <tr>
         <td colspan="3">
@@ -79,7 +395,7 @@
            {
                id = item.Id 
            } ) |
-                @Html.ActionLink( "Delete", "Delete", new
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DeleteText, "Delete", new
            {
                id = item.Id
            } )
@@ -88,6 +404,62 @@
     
     }
 }
-    
 
+<!-- Past -->
+    @if ( @Model.HasPastEvents )
+{
+    <tr>
+        <td colspan="3">
+            <header>
+                @Inzynierka.Resources.Strings.Resource.PastLabel
+            </header>
+        </td>
+    </tr>
+    foreach ( var item in Model.PastItems )
+    {
+    <tr>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.Date
+            (
+            @switch ( @item.Type )
+            {
+                case 1:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.PublicationText;
+                        break;
+                    }
+                case 2:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                        break;
+                    }
+                case 3:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.ReviewText;
+                        break;
+                    }
+                case 4:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                        break;
+                    }
+            }
+            )
+        </td>
+        <td>
+            @Inzynierka.Resources.Strings.Resource.EditHeader |
+            @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DetailsHeader, "Details", new
+           {
+               id = item.Id
+           } ) |
+            @Inzynierka.Resources.Strings.Resource.DeleteText
+        </td>
+    </tr>
+
+    }
+}
+      
 </table>

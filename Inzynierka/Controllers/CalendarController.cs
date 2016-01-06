@@ -12,12 +12,11 @@ namespace Inzynierka.Controllers
 {
     public class CalendarController : Controller
     {
+        ScientificWorkContext calendarContext = new ScientificWorkContext();
         // GET: Calendar
         //[Authorize]
         public ActionResult Index()
         {
-            var calendarContext = new ScientificWorkContext();
-
             CalendarListViewModel listViewModel = new CalendarListViewModel();
             string userId = User.Identity.GetUserId();
             var plans = calendarContext.ActivityPlans.Where(o => o.UserId == userId).ToList();
@@ -27,10 +26,41 @@ namespace Inzynierka.Controllers
                 Name = plan.ActivityName, Date = plan.Date.Value.ToString( "dd MMMM yyyy, dddd" ), Id = plan.Id, Type = (int) plan.Type
             }).ToList();
             var dateTimeNowString = DateTime.Now.Date.ToString( "dd MMMM yyyy, dddd" );
+            var tomorrowString = DateTime.Now.Date.AddDays(1);
+            var weekString = DateTime.Now.Date.AddDays( 7 );
+            var nextWeekString = DateTime.Now.Date.AddDays( 14 );
+            var thisMonthString = DateTime.Now.Date.AddDays( 30 );
             var todayItems = calendarItems.Where(o => o.Date == dateTimeNowString ).ToList();
 
+            var pastItems = calendarItems.Where(o => DateTime.Parse(o.Date) < DateTime.Now.Date).ToList();
+
+            var tomorrowItems = calendarItems.Where(o => DateTime.Parse(o.Date) == tomorrowString).ToList();
+
+            var thisWeek = calendarItems.Where(o => DateTime.Parse(o.Date) > tomorrowString && DateTime.Parse(o.Date) <= weekString).OrderByDescending(o => o.Date).ToList();
+            var nextWeek = calendarItems.Where( o => DateTime.Parse( o.Date ) > weekString && DateTime.Parse( o.Date ) <= nextWeekString ).OrderByDescending( o => o.Date ).ToList();
+            var thisMonthWeek = calendarItems.Where( o => DateTime.Parse( o.Date ) > nextWeekString && DateTime.Parse( o.Date ) <= thisMonthString ).OrderByDescending( o => o.Date ).ToList();
+            var futureWeek = calendarItems.Where( o => DateTime.Parse( o.Date ) > thisMonthString ).OrderByDescending( o => o.Date ).ToList();
+            
             listViewModel.HasTodayEvents = todayItems.Any();
             listViewModel.TodayItems = todayItems;
+
+            listViewModel.HasPastEvents = pastItems.Any();
+            listViewModel.PastItems = pastItems;
+
+            listViewModel.HasTomorrowItems = tomorrowItems.Any();
+            listViewModel.TomorrowItems = tomorrowItems;
+
+            listViewModel.HasThisWeekEvents = thisWeek.Any();
+            listViewModel.ThisWeekEvents = thisWeek;
+
+            listViewModel.NextWeekEvents = nextWeek;
+            listViewModel.HasNextWeekEvents = nextWeek.Any();
+
+            listViewModel.ThisMonthEvents = thisMonthWeek;
+            listViewModel.HasThisMonthEvents = thisMonthWeek.Any();
+
+            listViewModel.FutureEvents = futureWeek;
+            listViewModel.HasFutureEvents = futureWeek.Any();
 
             ViewBag.Items = calendarItems;
 
@@ -41,8 +71,6 @@ namespace Inzynierka.Controllers
         [Authorize]
         public ActionResult Details()
         {
-            var calendarContext = new ScientificWorkContext();
-
             var id = RouteData.Values.ContainsKey("id") ? RouteData.Values["id"].ToString() : null;
             if ( String.IsNullOrEmpty(id) )
             {
@@ -58,9 +86,16 @@ namespace Inzynierka.Controllers
                 return RedirectToActionPermanent( "ActivityError" );
             }
 
-            ViewBag.Context = plan;
+            if ( plan.Date.Value.Date >= DateTime.Now.Date )
+            {
+                ViewBag.CanEdit = true;
+            }
+            else
+            {
+                ViewBag.CanEdit = false;
+            }
 
-            return View();
+            return View( plan );
         }
 
         public ActionResult ActivityError()
@@ -73,7 +108,7 @@ namespace Inzynierka.Controllers
         public ActionResult Create()
         {
             var viewModel = new CalendarEntryEditViewModel();
-            viewModel.Date = DateTime.Now.Date.ToString( "dd-MMM-yyyy" );
+            viewModel.Date = DateTime.Now.Date;
             viewModel.ActivityTypes = new List<SelectListItem>();
             viewModel.Type = ActivityType.Deadline;
             string userId = User.Identity.GetUserId();
@@ -90,8 +125,6 @@ namespace Inzynierka.Controllers
         [Authorize]
         public ActionResult Edit()
         {
-            var calendarContext = new ScientificWorkContext();
-
             var id = RouteData.Values.ContainsKey( "id" ) ? RouteData.Values["id"].ToString() : null;
             if ( String.IsNullOrEmpty( id ) )
             {
@@ -109,7 +142,7 @@ namespace Inzynierka.Controllers
 
             var viewModel = new CalendarEntryEditViewModel();
             viewModel.ActivityName = plan.ActivityName;
-            viewModel.Date = plan.Date.Value.ToString( "dd-MMM-yyyy" );
+            viewModel.Date = plan.Date.Value;
             viewModel.ActivityTypes = new List<SelectListItem>();
             viewModel.Id = plan.Id;
             viewModel.Type = plan.Type;
@@ -135,15 +168,29 @@ namespace Inzynierka.Controllers
         [Authorize]
         public ActionResult Delete(string parameter)
         {
-            return View();
+            var id = RouteData.Values.ContainsKey( "id" ) ? RouteData.Values["id"].ToString() : null;
+            if ( String.IsNullOrEmpty( id ) )
+            {
+                return RedirectToActionPermanent( "ActivityError" );
+            }
+
+            var data = int.Parse( id );
+
+            var plan = calendarContext.ActivityPlans.FirstOrDefault( o => o.Id == data );
+
+            if ( plan == null )
+            {
+                return RedirectToActionPermanent( "ActivityError" );
+            }
+            
+            return View(plan);
         }
 
         [Authorize]
         public ActionResult SaveActivity()
         {
             var request = Request.Form;
-            var calendarContext = new ScientificWorkContext();
-
+            
             var id = request.GetValues("id");
 
             ActivityPlan itemToSave = null;
@@ -172,6 +219,24 @@ namespace Inzynierka.Controllers
             else
             {
                 calendarContext.ActivityPlans.AddOrUpdate( itemToSave );
+            }
+            calendarContext.SaveChanges();
+
+            return RedirectToActionPermanent( "Index" );
+        }
+
+        [Authorize]
+        public ActionResult DeleteActivity()
+        {
+            var request = Request.Form;
+
+            var id = request.Get( "id" );
+            var intId = int.Parse( id );
+            var item = calendarContext.ActivityPlans.FirstOrDefault( o => o.Id == intId );
+
+            if ( item != null )
+            {
+                calendarContext.ActivityPlans.Remove(item);
             }
             calendarContext.SaveChanges();
 

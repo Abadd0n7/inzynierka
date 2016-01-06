@@ -1,49 +1,71 @@
 ﻿@model Inzynierka.Models.ActivityPlan
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = @Inzynierka.Resources.Strings.Resource.DeleteText;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>@Inzynierka.Resources.Strings.Resource.DeleteText</h2>
+<h3 style="color: limegreen">@Model.ActivityName</h3>
+<h3>@Inzynierka.Resources.Strings.Resource.DeleteConfirmationText</h3>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>ActivityPlan</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ActivityName)
+            @Inzynierka.Resources.Strings.Resource.DateLabel
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ActivityName)
+            @Model.Date.Value.ToString( "dd MMMM yyyy, dddd" )
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Inzynierka.Resources.Strings.Resource.DescriptionLabel
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.UserId)
+            @Model.Description
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Date)
+            @Inzynierka.Resources.Strings.Resource.ActivityType
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @switch ( ( int ) @Model.Type )
+            {
+                case 1:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.PublicationText;
+                        break;
+                    }
+                case 2:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                        break;
+                    }
+                case 3:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.ReviewText;
+                        break;
+                    }
+                case 4:
+                    {
+                    @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                        break;
+                    }
+            }
         </dd>
-
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm( "DeleteActivity", "Calendar" ) ) {
         @Html.AntiForgeryToken()
+        @Html.HiddenFor( model => model.Id )
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="@Inzynierka.Resources.Strings.Resource.DeleteText" class="btn btn-danger" /> |
+            @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.BackText, "Index")
         </div>
     }
 </div>
