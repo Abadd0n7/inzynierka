@@ -12,5 +12,7 @@ namespace Inzynierka.ViewModel.Calendar
         public string Name { get; set; }
 
         public string Date { get; set; }
+
+        public int Type { get; set; }
     }
 }

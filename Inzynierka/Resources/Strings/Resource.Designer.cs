@@ -115,6 +115,15 @@ namespace Inzynierka.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create new.
+        /// </summary>
+        public static string CreateHeader {
+            get {
+                return ResourceManager.GetString("CreateHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string DateLabel {
@@ -147,6 +156,15 @@ namespace Inzynierka.Resources.Strings {
         public static string DetailsHeader {
             get {
                 return ResourceManager.GetString("DetailsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string EditHeader {
+            get {
+                return ResourceManager.GetString("EditHeader", resourceCulture);
             }
         }
         
@@ -210,6 +228,15 @@ namespace Inzynierka.Resources.Strings {
         public static string SampleKey {
             get {
                 return ResourceManager.GetString("SampleKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string SaveText {
+            get {
+                return ResourceManager.GetString("SaveText", resourceCulture);
             }
         }
         

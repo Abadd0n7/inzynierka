@@ -1,5 +1,6 @@
 ﻿@using System.Web.Razor.Parser
-@model IEnumerable<Inzynierka.Models.ActivityPlan>
+
+@model Inzynierka.ViewModel.Calendar.CalendarListViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +10,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.CreateHeader, "Create")
 </p>
 <table
     style="border-width: 0;"
@@ -26,7 +27,7 @@
         </th>
     </tr>
 
-@if ( ViewBag.HasTodayEvents )
+@if ( @Model.HasTodayEvents )
 {
     <tr>
         <td colspan="3">
@@ -35,7 +36,7 @@
             </header>
         </td>
     </tr>
-    foreach ( var item in ViewBag.TodayItems )
+    foreach ( var item in Model.TodayItems )
     {
         <tr>
             <td>
@@ -43,13 +44,38 @@
             </td>
             <td>
                 @item.Date
+                (
+                @switch ( @item.Type )
+                {
+                    case 1:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.PublicationText;
+                            break;
+                        }
+                    case 2:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.DeadlineText;
+                            break;
+                        }
+                    case 3:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.ReviewText;
+                            break;
+                        }
+                    case 4:
+                        {
+                        @Inzynierka.Resources.Strings.Resource.StartWritingText;
+                            break;
+                        }
+                }
+                )
             </td>
             <td>
-                @Html.ActionLink( "Edit", "Edit", new
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.EditHeader, "Edit", new
            {
                id = item.Id
            } ) |
-                @Html.ActionLink( "Details", "Details", new
+                @Html.ActionLink( @Inzynierka.Resources.Strings.Resource.DetailsHeader, "Details", new
            {
                id = item.Id 
            } ) |
@@ -59,6 +85,7 @@
            } )
             </td>
         </tr>
+    
     }
 }
     
