@@ -186,4 +186,31 @@
   <data name="SaveText" xml:space="preserve">
     <value>Zapisz</value>
   </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="DeleteConfirmationText" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć element?</value>
+  </data>
+  <data name="LengthMessage" xml:space="preserve">
+    <value>{0} musi mieć co najmniej {2} znaków długości.</value>
+  </data>
+  <data name="PastLabel" xml:space="preserve">
+    <value>Przeszłość</value>
+  </data>
+  <data name="TomorrowLabel" xml:space="preserve">
+    <value>Jutro</value>
+  </data>
+  <data name="ThisWeekLabel" xml:space="preserve">
+    <value>Ten tydzień</value>
+  </data>
+  <data name="NextWeekLabel" xml:space="preserve">
+    <value>Następny tydzień</value>
+  </data>
+  <data name="ThisMonthLabel" xml:space="preserve">
+    <value>Ten miesiąc</value>
+  </data>
+  <data name="InFutureLabel" xml:space="preserve">
+    <value>W przyszłości</value>
+  </data>
 </root>

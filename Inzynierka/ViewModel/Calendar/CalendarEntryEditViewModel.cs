@@ -10,13 +10,26 @@ namespace Inzynierka.ViewModel.Calendar
 {
     public class CalendarEntryEditViewModel
     {
+        private DateTime _date;
+
         [Required]
         [StringLength( 100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         public string ActivityName { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        public string Date { get; set; }
+        [DisplayFormat( DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true )]
+        public DateTime Date {
+            get
+            {
+                return ( _date == DateTime.MinValue ) ? DateTime.Now : _date;
+            }
+            set
+            {
+                _date = value;
+            }
+        }
+
 
         [Required]
         public ActivityType Type { get; set; }

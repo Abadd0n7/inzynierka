@@ -142,6 +142,24 @@ namespace Inzynierka.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this?.
+        /// </summary>
+        public static string DeleteConfirmationText {
+            get {
+                return ResourceManager.GetString("DeleteConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string DeleteText {
+            get {
+                return ResourceManager.GetString("DeleteText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string DescriptionLabel {
@@ -192,6 +210,42 @@ namespace Inzynierka.Resources.Strings {
         public static string HomeHeader {
             get {
                 return ResourceManager.GetString("HomeHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In future.
+        /// </summary>
+        public static string InFutureLabel {
+            get {
+                return ResourceManager.GetString("InFutureLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
+        /// </summary>
+        public static string LengthMessage {
+            get {
+                return ResourceManager.GetString("LengthMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next week.
+        /// </summary>
+        public static string NextWeekLabel {
+            get {
+                return ResourceManager.GetString("NextWeekLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In the past.
+        /// </summary>
+        public static string PastLabel {
+            get {
+                return ResourceManager.GetString("PastLabel", resourceCulture);
             }
         }
         
@@ -250,11 +304,38 @@ namespace Inzynierka.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This month.
+        /// </summary>
+        public static string ThisMonthLabel {
+            get {
+                return ResourceManager.GetString("ThisMonthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This week.
+        /// </summary>
+        public static string ThisWeekLabel {
+            get {
+                return ResourceManager.GetString("ThisWeekLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Today.
         /// </summary>
         public static string TodayLabel {
             get {
                 return ResourceManager.GetString("TodayLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tomorrow.
+        /// </summary>
+        public static string TomorrowLabel {
+            get {
+                return ResourceManager.GetString("TomorrowLabel", resourceCulture);
             }
         }
         
