@@ -16,6 +16,10 @@ namespace Inzynierka.Models
 	    {
 	        get; set;
 	    } 
+        public virtual DbSet<WorkPlan> WorkPlans
+        {
+            get; set;
+        }
 
 		protected override void OnModelCreating( DbModelBuilder modelBuilder )
 		{

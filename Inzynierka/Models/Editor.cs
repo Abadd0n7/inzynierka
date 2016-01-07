@@ -16,5 +16,8 @@ namespace Inzynierka.Models
 
         [DataType(DataType.MultilineText)]
         public string Body { get; set; }
+
+        public long Id { get; set; }
+        public string UserId { get; set; }
     }
 }

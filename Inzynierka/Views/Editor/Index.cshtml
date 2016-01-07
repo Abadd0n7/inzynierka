@@ -2,7 +2,19 @@
 @{
 	ViewBag.Title = "Edytor tekstu";
 }
+<h2>Index</h2>
 
-<div class="form-group">
-    @Html.EditorFor( model => model.Title)
-</div>
+<p>
+    @Html.ActionLink(@Inzynierka.Resources.Strings.Resource.CreateHeader, "Create")
+</p>
+<table style="border-width: 0;"
+       class="table">
+    <tr>
+        <th>
+            Tytuł pracy
+        </th>
+        <th>
+
+        </th>
+    </tr>
+</table>
