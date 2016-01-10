@@ -16,11 +16,11 @@ namespace Inzynierka.Models
 	    {
 	        get; set;
 	    } 
-        public virtual DbSet<WorkPlan> WorkPlans
+        public virtual DbSet<ScientificWorks> ScientificWorks
         {
             get; set;
         }
-
+        
 		protected override void OnModelCreating( DbModelBuilder modelBuilder )
 		{
 			

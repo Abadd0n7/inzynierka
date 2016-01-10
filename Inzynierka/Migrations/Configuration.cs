@@ -9,7 +9,7 @@ namespace Inzynierka.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Inzynierka.Models.ScientificWorkContext context)
