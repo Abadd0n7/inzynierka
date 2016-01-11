@@ -90,23 +90,15 @@ namespace Inzynierka.Controllers
             return View(work);
         }
         [HttpPost]
-        public ActionResult Delete(int? id, ScientificWorks work)
+        public ActionResult Delete(int id)
         {
             
             try
-            {
-                if (ModelState.IsValid)
-                {
-                    if (id == null)
-                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                    work = db.ScientificWorks.Find(id);
-                    if (work == null)
-                        return HttpNotFound();
-                    db.ScientificWorks.Remove(work);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                return View(work);
+            {  
+                ScientificWorks work = db.ScientificWorks.Find(id);      
+                db.Entry(work).State = System.Data.Entity.EntityState.Deleted;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
             catch
             {
